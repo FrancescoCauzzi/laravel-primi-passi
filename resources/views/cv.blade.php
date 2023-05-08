@@ -6,9 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CV (First Laravel Project)</title>
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-    <style>
-
-    </style>
 </head>
 <body>
     <div class="container">
