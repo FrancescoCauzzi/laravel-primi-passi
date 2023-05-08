@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="container py-4">
+        <div class="container py-3">
             <h1>{{ $teacher['name'] }} {{ $teacher['surname'] }}</h1>
             <img class="w-25" src="{{$teacher['image']}}" alt="">
             <h2>{{ $teacher['position'] }}</h2>
@@ -43,11 +43,15 @@
                 @endforeach
             </ul>
         </div>
+        <div class="__btns d-flex gap-3">
 
-
-
-
-
+            <div class="__go-back-btn mb-3">
+                <a href="/"><button type="button" class="btn btn-primary">Go back to the Homepage</button></a>
+            </div>
+            <div class="__go-back-btn mb-3">
+                <a href="/teachersPage"><button type="button" class="btn btn-info">Go back to the teachers page</button></a>
+            </div>
+        </div>
     </div>
     <script src="{{ mix('js/app.js') }}"></script>
 </body>

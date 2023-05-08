@@ -69,9 +69,11 @@ $teachers = [
     ]
 ];
 
+$theSchool = ['name' => 'St. James Middle School, Brighton', 'address' => 'St. James Road, 44, 075OBY, Brighton', 'courses' => ['General Scientific Curriculum', 'Art and Art History', 'Math and Computer Science', 'Nurse and Medicine', 'Scenografy and Cinema'], 'locations' => ['Brighton', 'Southampton', 'Winchester',], 'image' => 'https://www.brightoncollege.org.uk/media/2276/homepage-header-clock-tower.jpg'];
+
 // Use the $teachers array inside a route definition
-Route::get('/', function () use ($teachers) {
-    return view('home', compact('teachers'));
+Route::get('/teachersPage', function () use ($teachers) {
+    return view('teachersPage', compact('teachers'));
 });
 
 // Use the $teachers array inside another route definition and specify the index of the object in the array where to get the information
@@ -79,3 +81,11 @@ Route::get('/cv/{index}', function ($index) use ($teachers) {
     $teacher = $teachers[$index];
     return view('cv', compact('teacher'));
 })->name('cv');
+
+Route::get('/', function () use ($theSchool, $teachers) {
+    $data = [
+        'theSchool' => $theSchool,
+        'teachers' => $teachers,
+    ];
+    return view('home', compact('data'));
+});

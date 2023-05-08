@@ -9,22 +9,57 @@
 </head>
 <body>
     <div class="container py-3">
-        <h1>Welcome to our School Organization Page</h1>
-        <div class="d-flex gap-2">
-            @foreach($teachers as $index=>$teacher)
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                <img src="{{$teacher['image']}}" class="card-img-top" alt="...">
-                <h5 class="card-title">{{$teacher['name']}}</h5>
-                <h6 class="card-subtitle mb-2 text-body-secondary">{{$teacher['surname']}}</h6>
-                <p class="card-text">{{$teacher['age']}} years old and works as {{$teacher['position']}} in the {{$teacher['currentSchool']}}.</p>
-                <a href="{{ route('cv', ['index' => $index]) }}">{{ $teacher['name'] }} {{ $teacher['surname'] }} CV</a>
-                <br>
-                <a href="#" class="card-link">To the school page</a>
+        <h1>Welcome to our School</h1>
+        <div class="__school">
+            <h2>{{$data['theSchool']['name']}}</h2>
+            <h4>{{$data['theSchool']['address']}}</h4>
+            <div class="__school-image">
+                <img src="{{$data['theSchool']['image']}}" alt="">
+            </div>
+            <div class="__info d-flex gap-5 py-4">
+
+                <div class="__courses">
+                    <h4>Our courses</h4>
+                    <ul>
+                        @foreach($data['theSchool']['courses'] as $course)
+                        <li>
+                            {{$course}}
+                        </li>
+                        @endforeach
+
+                    </ul>
+                </div>
+                <div class="__locations">
+                    <h4>Our locations</h4>
+                    <ul>
+                        @foreach($data['theSchool']['locations'] as $location)
+                        <li>
+                            {{$location}}
+                        </li>
+                        @endforeach
+
+                    </ul>
+                </div>
+                <div class="__teachers">
+                    <h4>Our teachers</h4>
+                    <ul>
+                        @foreach($data['teachers'] as $teacher)
+                        <li>
+                            {{$teacher['name']}}  {{$teacher['surname']}}
+                        </li>
+                        @endforeach
+                        <li>
+                            <a href="/teachersPage">Our teachers page</a>
+                        </li>
+
+                    </ul>
+
+
                 </div>
             </div>
-            @endforeach
+
         </div>
+
 
 
     </div>
