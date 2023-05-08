@@ -18,11 +18,11 @@ $teachers = [
         'name' => 'Gianfranco',
         'surname' => 'Marconi',
         'age' => 36,
-        'address' => '35, Gray Road, Brighton, UK',
+        'address' => '35, Gray Road, Brighton, UK', 'email' => 'gianfrancomarc@gmail.com',
         'image' => 'https://thumbs.dreamstime.com/b/portrait-young-male-teacher-background-school-blackboard-teacher-s-day-knowledge-day-back-to-school-study-159722312.jpg',
         'position' => 'Middle School Math Teacher',
         'currentSchool' => 'St. James Middle School, Brighton',
-        'education' => 'Bachelor of Arts in Education, XYZ University',
+        'education' => 'Bachelor of Arts in Education, La Sapienza University',
         'years_of_experience' => 10,
         'teaching_experience' => [
             'Taught high school math for 3 years',
@@ -45,10 +45,11 @@ $teachers = [
         'surname' => 'Smith',
         'age' => 32,
         'address' => '88, Blue Road, Brighton, UK',
+        'email' => 'janesmith@gmail.com',
         'image' => 'https://cdn.theasmrindex.com/uploads/thumbs/6iEQI1imVr0.jpg',
         'position' => 'Middle School Science Teacher',
         'currentSchool' => 'St. James Middle School, Brighton',
-        'education' => 'Master of Science in Education, ABC College',
+        'education' => 'Master of Science in Education, Bath College',
         'years_of_experience' => 8,
         'teaching_experience' => [
             'Taught middle school science for 2 years',
@@ -73,12 +74,8 @@ Route::get('/', function () use ($teachers) {
     return view('home', compact('teachers'));
 });
 
-Route::get('/cv', function () use ($teachers) {
-    return view('cv', compact('teachers'));
-});
-
-
-// Route::get('/cv/{index}', function ($index) use ($teachers) {
-//     $teacher = $teachers[$index];
-//     return view('cv', compact('teacher'));
-// })->name('teacher.cv');
+// Use the $teachers array inside another route definition
+Route::get('/cv/{index}', function ($index) use ($teachers) {
+    $teacher = $teachers[$index];
+    return view('cv', compact('teacher'));
+})->name('cv');

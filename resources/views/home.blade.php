@@ -18,7 +18,8 @@
                 <h5 class="card-title">{{$teacher['name']}}</h5>
                 <h6 class="card-subtitle mb-2 text-body-secondary">{{$teacher['surname']}}</h6>
                 <p class="card-text">{{$teacher['age']}} years old and works as {{$teacher['position']}} in the {{$teacher['currentSchool']}}.</p>
-                <a href="/cv" class="card-link">To the CV</a>
+                <a href="{{ route('cv', ['index' => $index]) }}">{{ $teacher['name'] }} {{ $teacher['surname'] }}</a>
+                <br>
                 <a href="#" class="card-link">To the school page</a>
                 </div>
             </div>
