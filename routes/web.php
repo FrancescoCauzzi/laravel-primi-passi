@@ -82,6 +82,7 @@ Route::get('/cv/{index}', function ($index) use ($teachers) {
     return view('cv', compact('teacher'));
 })->name('cv');
 
+// use both $teachers and $theSchool array in teh same page (her 'home')
 Route::get('/', function () use ($theSchool, $teachers) {
     $data = [
         'theSchool' => $theSchool,
