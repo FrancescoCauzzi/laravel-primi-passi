@@ -74,7 +74,7 @@ Route::get('/', function () use ($teachers) {
     return view('home', compact('teachers'));
 });
 
-// Use the $teachers array inside another route definition
+// Use the $teachers array inside another route definition and specify the index of the object in the array where to get the information
 Route::get('/cv/{index}', function ($index) use ($teachers) {
     $teacher = $teachers[$index];
     return view('cv', compact('teacher'));
