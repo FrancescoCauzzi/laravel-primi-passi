@@ -46,10 +46,10 @@
         <div class="__btns d-flex gap-3">
 
             <div class="__go-back-btn mb-3">
-                <a href="/"><button type="button" class="btn btn-primary">Go back to the Homepage</button></a>
+                <a href="{{route('home')}}"><button type="button" class="btn btn-primary">Go back to the Homepage</button></a>
             </div>
             <div class="__go-back-btn mb-3">
-                <a href="/teachersPage"><button type="button" class="btn btn-info">Go back to the teachers page</button></a>
+                <a href="{{route('teachersPage')}}"><button type="button" class="btn btn-info">Go back to the teachers page</button></a>
             </div>
         </div>
     </div>

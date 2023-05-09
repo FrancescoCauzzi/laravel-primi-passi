@@ -49,7 +49,7 @@
                         </li>
                         @endforeach
                         <li>
-                            <a href="/teachersPage">Our teachers page</a>
+                            <a href="{{route('teachersPage')}}">Our teachers page</a>
                         </li>
 
                     </ul>

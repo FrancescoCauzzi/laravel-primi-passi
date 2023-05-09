@@ -74,7 +74,7 @@ $theSchool = ['name' => 'St. James Middle School, Brighton', 'address' => 'St. J
 // Use the $teachers array inside a route definition
 Route::get('/teachersPage', function () use ($teachers) {
     return view('teachersPage', compact('teachers'));
-});
+})->name('teachersPage');
 
 // Use the $teachers array inside another route definition and specify the index of the object in the array where to get the information
 Route::get('/cv/{index}', function ($index) use ($teachers) {
@@ -82,11 +82,11 @@ Route::get('/cv/{index}', function ($index) use ($teachers) {
     return view('cv', compact('teacher'));
 })->name('cv');
 
-// use both $teachers and $theSchool array in teh same page (her 'home')
+// use both $teachers and $theSchool array in the same page (here 'home')
 Route::get('/', function () use ($theSchool, $teachers) {
     $data = [
         'theSchool' => $theSchool,
         'teachers' => $teachers,
     ];
     return view('home', compact('data'));
-});
+})->name('home');

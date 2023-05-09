@@ -20,7 +20,7 @@
                 <p class="card-text">{{$teacher['age']}} years old and works as {{$teacher['position']}} in the {{$teacher['currentSchool']}}.</p>
                 <a href="{{ route('cv', ['index' => $index]) }}">{{ $teacher['name'] }} {{ $teacher['surname'] }} CV</a>
                 <br>
-                <a href="/" class="card-link">To the school page</a>
+                <a href="{{route('home')}} " class="card-link">To the school page</a>
                 </div>
             </div>
             @endforeach
